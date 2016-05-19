@@ -81,13 +81,6 @@ public class BeerProgressView extends View {
     public BeerProgressView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        int attrId = getResources().getIdentifier("colorAccent", "attr", getContext().getPackageName());
-        if (attrId > 0){
-            TypedValue colorAccent = new TypedValue();
-            getContext().getTheme().resolveAttribute(attrId, colorAccent, true);
-            mBeerColor = colorAccent.data;
-        }
-
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BeerProgressView);
 
         mBorderWidth = a.getDimensionPixelSize(R.styleable.BeerProgressView_waveBorderWidth, mBorderWidth);
