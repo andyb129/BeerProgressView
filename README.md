@@ -51,7 +51,7 @@ For more detailed code example to use the library, Please refer to the `/sample`
 `BeerProgressView` can be added as a custom view to any layout.
 
 ```
-<com.sixteenplusfour.beerprogressview.BeerProgressView
+<uk.co.barbuzz.beerprogressview.BeerProgressView
         android:id="@+id/beerProgressView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
