@@ -1,4 +1,6 @@
-# Beer Progress View
+# Beer Progress View 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BeerProgressView-green.svg?style=true)](https://android-arsenal.com/details/1/3594)
+
 A cool beer styled progress view with realistic bubbles*.  Cheers!
 
 * Increment progress.
