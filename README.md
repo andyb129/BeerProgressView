@@ -25,7 +25,7 @@ To use **BeerProgressView** in your projects, simply add the library as a depend
 ##### Gradle
 ```
 dependencies {
-  compile 'uk.co.barbuzz.beerprogressview:0.0.4'
+  compile 'uk.co.barbuzz:beerprogressview:0.0.4'
 }
 ```
 
