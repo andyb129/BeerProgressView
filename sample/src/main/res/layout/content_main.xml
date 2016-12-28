@@ -18,5 +18,6 @@
         app:beerProgress="0"
         app:waveMax="100"
         app:waveAmplitude="3dp"
-        app:bubbleColor="#b67200"/>
+        app:bubbleColor="#b67200"
+        app:bubbleCount="12"/>
 </RelativeLayout>
