@@ -116,7 +116,7 @@ public class BeerProgressView extends View {
         }
 
         //draw bubbles
-        if (mBeerProgressHeight > 0 & mBeerProgress > 10 && mBubbleCount > 0) {
+        if (mBeerProgressHeight > 0 & mBeerProgress > 10 & mBubbleCount > 0) {
             drawBubbles(canvas);
         } else {
             handler.removeCallbacks(mDrawBubblesRunnable);
