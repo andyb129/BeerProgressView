@@ -36,6 +36,7 @@ public class BeerProgressView extends View {
     private static final String STATE_PROGRESS = "state_progress";
     private static final String STATE_WAVE_COLOR = "state_wave_color";
     private static final String STATE_BUBBLE_COLOR = "state_bubble_color";
+    private static final String STATE_BUBBLE_COUNT = "state_bubble_count";
     private static final int BEER_DEFAULT_COLOR = Color.parseColor("#EFA601");
     private static final int BUBBLE_DEFAULT_COLOR = Color.parseColor("#B67200");
     private static final int BUBBLE_DEFAULT_COUNT = 20;
@@ -59,6 +60,7 @@ public class BeerProgressView extends View {
     private int mMax = 100;
     private int mBeerProgress = 0;
     private int mBeerColor = BEER_DEFAULT_COLOR;
+    private int mBubbleCount;
 
     //bubble vars
     private Runnable mDrawBubblesRunnable;
@@ -92,6 +94,7 @@ public class BeerProgressView extends View {
         mMax = a.getInt(R.styleable.BeerProgressView_waveMax, 100);
         mBeerProgress = a.getInteger(R.styleable.BeerProgressView_beerProgress, 0);
         mBubbleColor = a.getColor(R.styleable.BeerProgressView_bubbleColor, mBubbleColor);
+        mBubbleCount = a.getInteger(R.styleable.BeerProgressView_bubbleCount, BUBBLE_DEFAULT_COUNT);
 
         a.recycle();
 
@@ -113,7 +116,7 @@ public class BeerProgressView extends View {
         }
 
         //draw bubbles
-        if (mBeerProgressHeight > 0 & mBeerProgress > 10) {
+        if (mBeerProgressHeight > 0 & mBeerProgress > 10 & mBubbleCount > 0) {
             drawBubbles(canvas);
         } else {
             handler.removeCallbacks(mDrawBubblesRunnable);
@@ -138,6 +141,7 @@ public class BeerProgressView extends View {
         bundle.putInt(STATE_PROGRESS, mBeerProgress);
         bundle.putInt(STATE_WAVE_COLOR, mBeerColor);
         bundle.putInt(STATE_BUBBLE_COLOR, mBubbleColor);
+        bundle.putInt(STATE_BUBBLE_COUNT, mBubbleCount);
         return bundle;
     }
 
@@ -149,6 +153,7 @@ public class BeerProgressView extends View {
             mBeerProgress = bundle.getInt(STATE_PROGRESS, 0);
             mBeerColor = bundle.getInt(STATE_WAVE_COLOR, BEER_DEFAULT_COLOR);
             mBubbleColor = bundle.getInt(STATE_BUBBLE_COLOR, BUBBLE_DEFAULT_COLOR);
+            mBubbleCount = bundle.getInt(STATE_BUBBLE_COUNT, BUBBLE_DEFAULT_COUNT);
             super.onRestoreInstanceState(bundle.getParcelable(STATE_INSTANCE));
             return ;
         }
@@ -206,7 +211,7 @@ public class BeerProgressView extends View {
         mBubbleTopMargin = mBubbleHeight - ((int) mBeerProgressHeight) + 20;
         mBubbleWidth = canvas.getWidth();
 
-        if (mBubbles == null || mBubbles.length != BUBBLE_DEFAULT_COUNT) {
+        if (mBubbles == null || mBubbles.length != mBubbleCount) {
             createBubbles(mBubbleWidth, mBubbleHeight, mBubbleTopMargin);
         }
 
@@ -228,8 +233,8 @@ public class BeerProgressView extends View {
     }
 
     private void createBubbles(int width, int height, int topMargin) {
-        mBubbles = new Bubble[BUBBLE_DEFAULT_COUNT];
-        for (int i = 0; i < BUBBLE_DEFAULT_COUNT; i++) {
+        mBubbles = new Bubble[mBubbleCount];
+        for (int i = 0; i < mBubbleCount; i++) {
             this.mBubbles[i] = new Bubble(width, height, topMargin, mBubbleColor);
         }
     }
