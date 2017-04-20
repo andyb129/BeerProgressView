@@ -1,12 +1,14 @@
 # Beer Progress View 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BeerProgressView-green.svg?style=true)](https://android-arsenal.com/details/1/3594)
+<a href="http://www.methodscount.com/?lib=uk.co.barbuzz%3Abeerprogressview%3A0.0.4"><img src="https://img.shields.io/badge/Methods and size-core: 109 | deps: 929 | 10 KB-e91e63.svg"/></a>
 
 A cool beer styled progress view with realistic bubbles*.  Cheers!
 
 * Increment progress.
 * Change beer colour.
 * Change wave size.
-* Change bubble colour.  
+* Change bubble colour.
+* Change bubble count
 
 (*realism of bubbles not guaranteed)
 
@@ -59,6 +61,7 @@ For more detailed code example to use the library, Please refer to the `/sample`
         android:layout_height="match_parent"
         app:beerColor="#EFA601"
         app:bubbleColor="#B67200"
+        app:bubbleCount="12"
         app:beerProgress="0"
         app:waveMax="100"
         app:waveAmplitude="3dp"/>
@@ -69,14 +72,14 @@ You can then either set the xml parameters to configure the view or do it progra
 BeerProgressView beerProgressView = (BeerProgressView) findViewById(R.id.beerProgressView);
 beerProgressView.setBeerColor(ContextCompat.getColor(mActivity, R.color.lager));
 beerProgressView.setBubbleColor(ContextCompat.getColor(mActivity, R.color.lager_bubble));
+beerProgressView.setBubbleCount(12);
 beerProgressView.setMax(100);
 beerProgressView.setAmplitude(4);
 beerProgressView.setBeerProgress(10);
 ```
 
 ### TODO
-1. Add number of bubbles to xml config?
-2. Improve draw efficiency of view
+1. Improve draw efficiency of view
 
 ### Thanks
 
@@ -84,6 +87,9 @@ This library has been made by pulling together two other open source libraries t
 
 * WaveProgrssView by [zeng1990java](https://github.com/zeng1990java) - [https://github.com/zeng1990java/WaveProgressView](https://github.com/zeng1990java/WaveProgressView)
 * BubbleWallpaper by [vrnvikas](https://github.com/vrnvikas) - [https://github.com/vrnvikas/BubbleWallpaper](https://github.com/vrnvikas/BubbleWallpaper)
+
+Thanks to Contributors
+LuizGadao
 
 ### Licence
 ```
