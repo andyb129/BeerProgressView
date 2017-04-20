@@ -89,6 +89,7 @@ This library has been made by pulling together two other open source libraries t
 * BubbleWallpaper by [vrnvikas](https://github.com/vrnvikas) - [https://github.com/vrnvikas/BubbleWallpaper](https://github.com/vrnvikas/BubbleWallpaper)
 
 Thanks to Contributors
+
 LuizGadao
 
 ### Licence
