@@ -1,6 +1,6 @@
 # Beer Progress View 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BeerProgressView-green.svg?style=true)](https://android-arsenal.com/details/1/3594)
-<a href="http://www.methodscount.com/?lib=uk.co.barbuzz%3Abeerprogressview%3A0.0.4"><img src="https://img.shields.io/badge/Methods and size-core: 109 | deps: 929 | 10 KB-e91e63.svg"/></a>
+<br><a href="http://www.methodscount.com/?lib=uk.co.barbuzz%3Abeerprogressview%3A0.0.4"><img src="https://img.shields.io/badge/Methods and size-core: 109 | deps: 929 | 10 KB-e91e63.svg"/></a>
 
 A cool beer styled progress view with realistic bubbles*.  Cheers!
 
