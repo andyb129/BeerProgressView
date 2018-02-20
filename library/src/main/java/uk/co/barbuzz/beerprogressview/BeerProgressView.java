@@ -127,8 +127,20 @@ public class BeerProgressView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        mBeerWidth = (int) (getWidth() - mHaftBorderRadius);
-        mBeerHeight = (int) (getHeight() - mHaftBorderRadius);
+
+/**
+	If the device is an arm-based device, the getHeight() & getWidth() will always give 0 & 0 respectively.
+	So,  it is always preffered to use getMeasuredWidth() & getMeasuredHeight() respectively.
+	These method wors on all type of devices.
+
+	Refernces: http://stackoverflow.com/questions/42529912/getheight-is-always-0-onmeasure-on-arm-based-devices
+**/
+//        mBeerWidth = (int) (getWidth() - mHaftBorderRadius);
+//        mBeerHeight = (int) (getHeight() - mHaftBorderRadius);
+
+        mBeerWidth = (int) (getMeasuredWidth() - mHaftBorderRadius);
+        mBeerHeight = (int) (getMeasuredHeight() - mHaftBorderRadius);
+
 
         mBorderRectF.set(mHaftBorderRadius, mHaftBorderRadius, mBeerWidth, mBeerHeight);
     }
