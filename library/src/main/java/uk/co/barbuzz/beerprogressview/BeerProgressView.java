@@ -420,6 +420,22 @@ public class BeerProgressView extends View {
     }
 
     /**
+     * get the bubble count
+     * @return
+     */
+    public int getBubbleCount() {
+        return mBubbleCount;
+    }
+
+    /**
+     * set the number of bubbles
+     * @param bubbleCount
+     */
+    public void setBubbleCount(int bubbleCount) {
+        this.mBubbleCount = bubbleCount;
+    }
+
+    /**
      * set the angle of the wave
      *
      * @param angle
