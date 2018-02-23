@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private MainActivity mActivity;
     private BottomBar mBottomBar;
     private BeerProgressView mBeerProgressView;
-    private AsyncTask<Boolean, Integer, Boolean> mPourBeerTask;
+    private AsyncTask<Void, Integer, Void> mPourBeerTask;
     private AlertDialog infoDialog;
 
     @Override
@@ -122,6 +122,6 @@ public class MainActivity extends AppCompatActivity {
         }
         mBeerProgressView.setBeerColor(beerColour);
         mBeerProgressView.setBubbleColor(bubbleColour);
-        mPourBeerTask = new PourBeerTask(this, mBeerProgressView).execute(true);
+        mPourBeerTask = new PourBeerTask(mBeerProgressView).execute();
     }
 }
