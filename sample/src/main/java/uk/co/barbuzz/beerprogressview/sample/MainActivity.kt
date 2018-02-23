@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 
-class MainKotlinActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private var pourBeerTask: AsyncTask<Void, Int, Void>? = null
     private val infoDialogue: AlertDialog by lazy {
         AlertDialog.Builder(this)
