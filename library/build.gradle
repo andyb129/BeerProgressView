@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply from: 'maven-push.gradle'
 
 android {
@@ -21,4 +22,8 @@ android {
 
 dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
