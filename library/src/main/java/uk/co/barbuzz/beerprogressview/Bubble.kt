@@ -120,5 +120,9 @@ class Bubble {
         return `val`.toInt() + min
     }
 
+    fun updateColour(bubbleColour: Int) {
+        paint.color = bubbleColour
+    }
+
 
 }
