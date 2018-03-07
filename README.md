@@ -72,7 +72,7 @@ You can then either set the xml parameters to configure the view or do it progra
 BeerProgressView beerProgressView = (BeerProgressView) findViewById(R.id.beerProgressView);
 beerProgressView.setBeerColor(ContextCompat.getColor(mActivity, R.color.lager));
 beerProgressView.setBubbleColor(ContextCompat.getColor(mActivity, R.color.lager_bubble));
-beerProgressView.setMaxBubbleCount(12);
+beerProgressView.setBubbleCount(12);
 beerProgressView.setMax(100);
 beerProgressView.setAmplitude(4);
 beerProgressView.setBeerProgress(10);
