@@ -19,5 +19,5 @@
         app:waveMax="100"
         app:waveAmplitude="3dp"
         app:bubbleColor="#b67200"
-        app:maxBubbleCount="12"/>
+        app:bubbleCount="12"/>
 </RelativeLayout>
