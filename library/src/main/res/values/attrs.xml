@@ -4,7 +4,7 @@
     <!-- wave beerProgress view -->
     <declare-styleable name="BeerProgressView">
         <attr name="bubbleColor" format="color"/>
-        <attr name="bubbleCount" format="integer"/>
+        <attr name="maxBubbleCount" format="integer"/>
         <attr name="beerColor" format="color"/>
         <attr name="beerProgress" format="integer"/>
         <attr name="waveBorderWidth" format="dimension"/>
