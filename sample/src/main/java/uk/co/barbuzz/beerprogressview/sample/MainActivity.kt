@@ -2,8 +2,8 @@ package uk.co.barbuzz.beerprogressview.sample
 
 import android.content.Intent
 import android.net.Uri
-import android.os.AsyncTask
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
@@ -16,7 +16,22 @@ import kotlinx.android.synthetic.main.content_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    private var pourBeerTask: AsyncTask<Void, Int, Void>? = null
+    private val beerDepth: Long = 10000
+
+    private val pourBeerTaskNew = object : CountDownTimer(beerDepth, 10) {
+        override fun onFinish() {
+
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            val progress = beerDepth - millisUntilFinished
+            val percentage = (progress.toDouble() / beerDepth * 100).toInt()
+            when (percentage) {
+                in 0..90 -> content_main_beer_progress_view.beerProgress = percentage
+                else -> onFinish()
+            }
+        }
+    }
     private val infoDialogue: AlertDialog by lazy {
         AlertDialog.Builder(this)
                 .setTitle(R.string.app_name)
@@ -98,13 +113,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pourBeer(beerColour: Int, bubbleColour: Int) {
-        if (pourBeerTask != null) {
-            pourBeerTask!!.cancel(true)
-            pourBeerTask = null
-            content_main_beer_progress_view!!.beerProgress = 0
-        }
-        content_main_beer_progress_view!!.beerColor = beerColour
-        content_main_beer_progress_view!!.bubbleColor = bubbleColour
-        pourBeerTask = PourBeerTask(content_main_beer_progress_view).execute()
+        pourBeerTaskNew.cancel()
+        content_main_beer_progress_view.beerProgress = 0
+        content_main_beer_progress_view.beerColor = beerColour
+        content_main_beer_progress_view.bubbleColor = bubbleColour
+        pourBeerTaskNew.start()
     }
 }
